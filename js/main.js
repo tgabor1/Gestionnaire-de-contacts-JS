@@ -26,7 +26,7 @@ contacts.push(contact3)
 // Ajout d'un écouteur sur le bouton de choix
 btnChoix.addEventListener('click', executerChoix)
 
-function executerChoix () {
+function executerChoix() {
   let valeur = choix.value // Je récupère la valeur de l'option active sur le select
 
   switch (valeur) {
@@ -74,16 +74,16 @@ function executerChoix () {
   }
 }
 // Masque un élément en modifiant son style
-function masquer (element) {
+function masquer(element) {
   element.style.display = 'none'
 }
 
 // Affiche un élément en modifiant son style
-function afficher (element) {
+function afficher(element) {
   element.style.display = 'block'
 }
 
-function ajouterContact () {
+function ajouterContact() {
   let nom = formNom.value
   let prenom = formPrenom.value
   if (nom === '' || prenom === '') {
@@ -96,7 +96,7 @@ function ajouterContact () {
   }
 }
 
-function afficherContact () {
+function afficherContact() {
   affichageDesContacts.innerHTML =
     '<h2>Voici la liste de tous les contacts :</h2>'
   // boucle d'affichage des contacts
@@ -107,7 +107,7 @@ function afficherContact () {
 }
 
 /* deux boucles différentes : for ou forEach */
-function listerContact () {
+function listerContact() {
   listeSuppression.innerHTML = '' // efface la liste des contacts
   // for (let i = 0; i < contacts.length; i++) {
   //   // Appel de la méthode d'affichage du contact pour chaque objet Contact
@@ -118,12 +118,12 @@ function listerContact () {
   let indice = 0
   contacts.forEach(function (contact) {
     listeSuppression.innerHTML +=
-    '<option value=' + indice + '>' + contact.afficheContact() + '</option>'
+      '<option value=' + indice + '>' + contact.afficheContact() + '</option>'
     indice++
   })
 }
 
-function supprimerContact () {
+function supprimerContact() {
   let indexContact = listeSuppression.value
   // Supprime la ligne du tableau en passant en paramètres son index et le nombre de lignes à supprimer
   contacts.splice(indexContact, 1)
@@ -132,7 +132,7 @@ function supprimerContact () {
   masquer(supprBtn)
 }
 
-function modifierContact () {
+function modifierContact() {
   masquer(listeSuppression)
   masquer(supprBtn)
   afficher(formulaire)
@@ -147,7 +147,7 @@ function renommerSupprBtn(option) {
   option ? supprBtn.textContent = "Supprimer un contact" : supprBtn.textContent = "Modifier le contact"
 }
 
-function validerModifierContact(){
+function validerModifierContact() {
   let nom = formNom.value
   let prenom = formPrenom.value
   let indexContact = listeSuppression.value
@@ -155,8 +155,8 @@ function validerModifierContact(){
     // vérification du contenu des champs
     alert("Au moins un des champs est vide")
   } else {
-   contacts[indexContact].nom = nom
-   contacts[indexContact].prenom = prenom
+    contacts[indexContact].nom = nom
+    contacts[indexContact].prenom = prenom
     alert('le contact ' + prenom + ' ' + nom + ' a été modifié')
     masquer(formulaire)
   }
