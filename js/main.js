@@ -1,6 +1,3 @@
-/* Gestionnaire de Contact */
-
-//Variables, contacts et tableau les contenant
 // Les options du programme
 let choix = document.getElementById('selection')
 let btnChoix = document.getElementById('valider')
@@ -137,7 +134,6 @@ function modifierContact() {
   masquer(supprBtn)
   afficher(formulaire)
   let indexContact = listeSuppression.value
-  console.log(indexContact)
   formNom.value = contacts[indexContact].nom
   formPrenom.value = contacts[indexContact].prenom
   formBtn.addEventListener('click', validerModifierContact)
