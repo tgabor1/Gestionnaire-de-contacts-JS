@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Gestion des contacts</title>
+  </head>
+
+  <body>
+    <h1>Bienvenue sur votre gestionnaire de contact</h1>
+    <main>
+      <!-- Sélection de l'option du programme -->
+      <select id="selection" title="selection du programme">
+        <option value="">Veuillez sélectionner une action dans la liste</option>
+        <option value="0">Quitter</option>
+        <option value="1">Afficher les contacts</option>
+        <option value="2">Ajouter un contact</option>
+        <option value="3">Supprimer un contact</option>
+        <option value="4">Modifier un contact</option>
+      </select>
+      <button id="valider">Valider</button>
+
+      <!-- Liste déroulante pur la suppression ou la modification d'un contact -->
+      <select id="suppressionContact" title="suppression du contact"></select>
+      <button id="supprimer">Supprimer le contact</button>
+
+      <!-- tableau d'ajout de contact -->
+      <table id="ajoutContact">
+        <tr>
+          <td><label>Prénom :</label></td>
+          <td>
+            <input
+              type="text"
+              id="firstName"
+              maxlength="40"
+              placeholder="ex : Philippe"
+              required="required"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label>Nom :</label></td>
+          <td>
+            <input
+              type="text"
+              id="lastName"
+              maxlength="40"
+              placeholder="ex : Carlier"
+              required="required"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td id="tdButton" colspan="2">
+            <button id="validerContact">Ajouter le contact</button>
+          </td>
+        </tr>
+      </table>
+    </main>
+
+    <!-- Afficher la liste des contacts -->
+    <section id="contacts"></section>
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
